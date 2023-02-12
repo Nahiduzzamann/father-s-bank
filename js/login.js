@@ -1,11 +1,11 @@
-document.getElementById('btn-submit').addEventListener('click',function(){
+document.getElementById('btn-submit').addEventListener('click', function () {
     const email = document.getElementById('in-email').value;
     const password = document.getElementById('in-password').value;
 
-    if(email === 'nahid@gmail.com' && password === '1111'){
-        console.log('pass and email match!!')
+    if (email === 'nahid' && password === '1111') {
+        window.location.href = 'bank.html';
     }
-    else{
-        console.log('enter correct pass and email')
+    else {
+        alert('Please enter valid email and password');
     }
 })
