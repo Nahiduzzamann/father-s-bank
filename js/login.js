@@ -9,3 +9,4 @@ document.getElementById('btn-submit').addEventListener('click', function () {
         alert('Please enter valid email and password');
     }
 })
+
