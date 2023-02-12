@@ -23,7 +23,14 @@ document.getElementById('btn-deposit').addEventListener('click', function () {
 
 document.getElementById('btn-withdraw').addEventListener('click', function () {
     const UserWithdraw = document.getElementById('in-withdraw').value;
-    if (parseInt(UserWithdraw) > 0) {
+    let bankBalanceField = document.getElementById('balance').innerText;
+    let bankBalanceFieldCurrentamount = parseInt(bankBalanceField);
+
+
+    if (bankBalanceFieldCurrentamount < parseInt(UserWithdraw)) {
+        alert('Sorry!! Insufficient Balance.')
+    }
+    else if (parseInt(UserWithdraw) > 0) {
         //Withdraw section
         let bankWithdrawField = document.getElementById('withdraw').innerText;
         let bankWithdrawFieldCurrentamount = parseInt(bankWithdrawField);
@@ -31,8 +38,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
         document.getElementById('withdraw').innerText = bankWithdrawFieldCurrentamount;
 
         //balance section
-        let bankBalanceField = document.getElementById('balance').innerText;
-        let bankBalanceFieldCurrentamount = parseInt(bankBalanceField);
+        
         bankBalanceFieldCurrentamount = bankBalanceFieldCurrentamount - parseInt(UserWithdraw);
         document.getElementById('balance').innerText = bankBalanceFieldCurrentamount;
 
